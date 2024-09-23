@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function App() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `Contador: ${count}`;
+  }, [count]);
 
   const incrementar = () => {
     setCount(count + 1);
